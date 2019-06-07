@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES6",
+    "sourceMap": true,
+    "outDir": "./build",
+    "rootDir": "./src",
+
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "declaration": true,
+
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": false,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "*": ["node_modules/*", "types/*"]
+    },
+    "lib": ["dom", "es7"]
+  },
+  "exclude": ["node_modules", "build", "tests"]
+}
