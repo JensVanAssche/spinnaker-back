@@ -1,0 +1,16 @@
+{
+  "name": "node_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.0.7",
+    "express": "^4.17.1",
+    "tree-house": "^3.4.5"
+  }
+}
