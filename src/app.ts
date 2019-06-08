@@ -1,7 +1,14 @@
 import * as express from "express";
 import * as treehouse from "tree-house";
+import * as session from "express-session";
+import * as dotenvSafe from "dotenv-safe";
 
 const app: express.Application = express();
+
+dotenvSafe.load({
+  silent: true,
+  allowEmptyValues: true
+});
 
 treehouse.setBodyParser(app, "*");
 treehouse.setBasicSecurity(app, "*", {
@@ -23,8 +30,19 @@ treehouse.setBasicSecurity(app, "*", {
 
 app.get("/", (_req, res) => res.send("server running"));
 
+app.use(
+  session({
+    secret: "work hard",
+    resave: true,
+    saveUninitialized: false
+  })
+);
+
 app.use(`/api`, require(`./routes/`).routes);
 
-app.listen(3000, () => {
-  console.log("server started on port 3000");
+treehouse.startServer(app, {
+  title: "node_server",
+  port: parseInt(process.env.PORT || "3000", 10),
+  pre: () => {},
+  post: () => {}
 });
