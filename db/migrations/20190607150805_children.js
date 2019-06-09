@@ -7,7 +7,8 @@ exports.up = async knex => {
     table.specificType("record_id", "serial"); // Record incrementing key
 
     // Not nullable
-    table.text("full_name").notNullable();
+    table.text("first_name").notNullable();
+    table.text("last_name").notNullable();
     table.uuid("parent_id").notNullable();
 
     // Nullable
