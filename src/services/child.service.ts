@@ -21,3 +21,13 @@ export async function getAll(parentId) {
     throw error;
   }
 }
+
+export async function remove(id) {
+  try {
+    const result = await childRepository.remove(id);
+    if (result.affectedRows === 0) throw "child not found";
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}

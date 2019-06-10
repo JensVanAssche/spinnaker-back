@@ -63,3 +63,11 @@ export async function getAll(parentId) {
   const data = await query;
   return data;
 }
+
+export async function remove(id) {
+  const query = db(tableNames.CHILDREN)
+    .del()
+    .where({ id });
+
+  return { affectedRows: await query };
+}

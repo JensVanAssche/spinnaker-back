@@ -7,10 +7,7 @@ export async function loginParent(req, res) {
   req.session.userId = data.id;
   req.session.type = "parent";
 
-  res.send({
-    status: 200,
-    payload: data
-  });
+  res.send(data);
 }
 
 export async function loginChild(req, res) {
@@ -20,10 +17,7 @@ export async function loginChild(req, res) {
   req.session.userId = data.id;
   req.session.type = "child";
 
-  res.send({
-    status: 200,
-    payload: data
-  });
+  res.send(data);
 }
 
 /**
@@ -42,12 +36,9 @@ export async function findCurrentUser(req, res) {
       user["type"] = "child";
     }
 
-    res.send({
-      status: 200,
-      payload: user
-    });
+    res.send(user);
   } else {
-    throw "error";
+    throw "not logged in";
   }
 }
 

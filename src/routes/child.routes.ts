@@ -13,4 +13,9 @@ export const routes = Router({ mergeParams: true })
     "/:parentId",
     validateSchema(childSchema.getAll),
     handleAsyncFn(controller.getAll)
+  )
+  .delete(
+    "/:id",
+    validateSchema(childSchema.remove),
+    handleAsyncFn(controller.remove)
   );

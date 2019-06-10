@@ -5,7 +5,7 @@ export const childSchema = {
     body: Joi.object({
       firstName: Joi.string().required(),
       lastName: Joi.string().required(),
-      parentId: Joi.string().required(),
+      parentId: Joi.string().guid(),
       password: Joi.string()
         .min(6)
         .required()
@@ -14,6 +14,11 @@ export const childSchema = {
   getAll: {
     params: {
       parentId: Joi.string().guid()
+    }
+  },
+  remove: {
+    params: {
+      id: Joi.string().guid()
     }
   }
 };
