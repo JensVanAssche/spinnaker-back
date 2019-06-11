@@ -7,5 +7,7 @@ export const envs = {
 
 export const tableNames = {
   CHILDREN: "children",
-  PARENTS: "parents"
+  PARENTS: "parents",
+  GAMES: "games",
+  GAMES_CONFIG: "games_config"
 };

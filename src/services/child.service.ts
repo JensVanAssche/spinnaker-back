@@ -1,4 +1,5 @@
 import * as childRepository from "../repositories/child.repository";
+import * as configRepository from "../repositories/config.repository";
 
 export async function create(values) {
   try {
@@ -8,7 +9,9 @@ export async function create(values) {
       values.lastName
     );
     if (user) throw "Child already exists";
-    return await childRepository.create(values);
+    const result = await childRepository.create(values);
+    await configRepository.create(result.id);
+    return result;
   } catch (error) {
     throw error;
   }
@@ -24,6 +27,7 @@ export async function getAll(parentId) {
 
 export async function remove(id) {
   try {
+    await configRepository.remove(id);
     const result = await childRepository.remove(id);
     if (result.affectedRows === 0) throw "child not found";
     return result;

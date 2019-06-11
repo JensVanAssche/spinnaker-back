@@ -4,7 +4,6 @@ exports.up = async knex => {
       .uuid("id")
       .primary()
       .defaultTo(knex.raw("uuid_generate_v1mc()")); // Primary key
-    table.specificType("record_id", "serial"); // Record incrementing key
 
     // Not nullable
     table.text("first_name").notNullable();
