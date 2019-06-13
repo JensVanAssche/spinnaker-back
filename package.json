@@ -8,7 +8,11 @@
     "start": "node ./build/app",
     "serve": "npm run build && npm run start",
     "db:seed": "node node_modules/knex/bin/cli.js seed:run",
-    "db:migrate": "node node_modules/knex/bin/cli.js migrate:latest"
+    "db:migrate": "node node_modules/knex/bin/cli.js migrate:latest",
+    "postinstall": "tsc"
+  },
+  "engines": {
+    "node": "10.15.1"
   },
   "author": "",
   "license": "ISC",
