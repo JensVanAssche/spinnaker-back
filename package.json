@@ -9,7 +9,7 @@
     "serve": "npm run build && npm run start",
     "db:seed": "node node_modules/knex/bin/cli.js seed:run",
     "db:migrate": "node node_modules/knex/bin/cli.js migrate:latest",
-    "postinstall": "npm run build"
+    "postinstall": "node_modules/typescript/bin/tsc"
   },
   "engines": {
     "node": "10.15.1"
@@ -28,6 +28,7 @@
     "knex": "^0.17.3",
     "pg": "^7.11.0",
     "tree-house": "^3.4.5",
-    "tree-house-authentication": "^3.1.3"
+    "tree-house-authentication": "^3.1.3",
+    "typescript": "^3.5.2"
   }
 }
