@@ -1,4 +1,0 @@
-deploy:
-  provider: heroku
-  api_key:
-    secure: e3cccd06-4404-4d44-882a-1d3c4497211e
