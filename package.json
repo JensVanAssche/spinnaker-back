@@ -9,7 +9,7 @@
     "serve": "npm run build && npm run start",
     "db:seed": "node node_modules/knex/bin/cli.js seed:run",
     "db:migrate": "node node_modules/knex/bin/cli.js migrate:latest",
-    "postinstall": "tsc"
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": "10.15.1"
