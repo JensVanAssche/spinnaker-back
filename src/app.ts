@@ -40,9 +40,17 @@ app.use(
 
 app.use(`/api`, require(`./routes/`).routes);
 
-treehouse.startServer(app, {
-  title: "node_server",
-  port: parseInt(process.env.PORT || "3000", 10),
-  pre: () => {},
-  post: () => {}
+// treehouse.startServer(app, {
+//   title: "node_server",
+//   port: parseInt(process.env.PORT || "3000", 10),
+//   pre: () => {},
+//   post: () => {}
+// });
+
+app.listen(process.env.PORT || 3000, function() {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
 });
