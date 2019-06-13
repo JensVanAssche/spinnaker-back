@@ -6,7 +6,10 @@ exports.up = async knex => {
       .defaultTo(knex.raw("uuid_generate_v1mc()")); // Primary key
 
     // Not nullable
-    table.text("game_code_name").notNullable();
+    table
+      .text("game_code_name")
+      .notNullable()
+      .unique();
     table.text("game_display_name").notNullable();
     table.text("image_name").notNullable();
     table.text("parameter_name").notNullable();

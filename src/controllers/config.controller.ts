@@ -9,3 +9,11 @@ export async function updateConfig(req, res) {
   const result = await configService.updateConfig(req.body);
   res.send(result);
 }
+
+export async function getParameter(req, res) {
+  const result = await configService.getParameter(
+    req.params.childId,
+    req.params.gameCodeName
+  );
+  res.send(result);
+}

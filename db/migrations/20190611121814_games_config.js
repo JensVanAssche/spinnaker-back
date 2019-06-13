@@ -7,7 +7,7 @@ exports.up = async knex => {
 
     // Not nullable
     table.uuid("child_id").notNullable();
-    table.uuid("game_id").notNullable();
+    table.text("game_code_name").notNullable();
     table.text("parameter_value").notNullable();
     table
       .boolean("enabled")
@@ -31,8 +31,8 @@ exports.up = async knex => {
       .inTable("children");
 
     table
-      .foreign("game_id")
-      .references("id")
+      .foreign("game_code_name")
+      .references("game_code_name")
       .inTable("games");
   });
 };

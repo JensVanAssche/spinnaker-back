@@ -3,16 +3,22 @@ exports.seed = async function(knex) {
 
   const data = [
     {
-      game_code_name: "plane",
-      game_display_name: "Vliegtuig",
-      image_name: "sky.png",
-      parameter_name: "Tijd"
+      game_code_name: "gift",
+      game_display_name: "Pakjes Opendoen",
+      image_name: "gift_thumbnail.png",
+      parameter_name: "Score"
     },
     {
       game_code_name: "balloon",
-      game_display_name: "Ballon",
-      image_name: "sky.png",
-      parameter_name: "Tijd"
+      game_display_name: "Ballonnen Blazen",
+      image_name: "balloon_thumbnail.png",
+      parameter_name: "Score"
+    },
+    {
+      game_code_name: "plane",
+      game_display_name: "Vliegtuigje Vliegen",
+      image_name: "plane_thumbnail.png",
+      parameter_name: "Score"
     }
   ];
 

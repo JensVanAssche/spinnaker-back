@@ -15,3 +15,11 @@ export async function updateConfig(values) {
     throw error;
   }
 }
+
+export async function getParameter(childId, gameCodeName) {
+  try {
+    return await configRepository.getParameter(childId, gameCodeName);
+  } catch (error) {
+    throw error;
+  }
+}

@@ -18,5 +18,11 @@ export const configSchema = {
         })
       )
     })
+  },
+  getParameter: {
+    params: {
+      childId: Joi.string().guid(),
+      gameCodeName: Joi.string()
+    }
   }
 };

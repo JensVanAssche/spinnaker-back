@@ -5,6 +5,11 @@ import { configSchema } from "../schemes/config.schema";
 
 export const routes = Router({ mergeParams: true })
   .get(
+    "/:childId/:gameCodeName",
+    validateSchema(configSchema.getParameter),
+    handleAsyncFn(controller.getParameter)
+  )
+  .get(
     "/:childId",
     validateSchema(configSchema.getAll),
     handleAsyncFn(controller.getAll)

@@ -12,7 +12,12 @@ import * as gameRepository from "../repositories/game.repository";
 
 export async function getAll(childId) {
   const query = db(tableNames.GAMES_CONFIG)
-    .join(tableNames.GAMES, "games_config.game_id", "=", "games.id")
+    .join(
+      tableNames.GAMES,
+      "games_config.game_code_name",
+      "=",
+      "games.game_code_name"
+    )
     .select(
       "games_config.id",
       "games.game_display_name",
@@ -28,7 +33,12 @@ export async function getAll(childId) {
 
 export async function getEnabled(childId) {
   const query = db(tableNames.GAMES_CONFIG)
-    .join(tableNames.GAMES, "games_config.game_id", "=", "games.id")
+    .join(
+      tableNames.GAMES,
+      "games_config.game_code_name",
+      "=",
+      "games.game_code_name"
+    )
     .select(
       "games.id",
       "games.game_code_name",
@@ -50,7 +60,11 @@ export async function create(childId) {
     Promise.all(
       games.map(game => {
         return db(tableNames.GAMES_CONFIG)
-          .insert({ childId, gameId: game.id, parameterValue: 0 })
+          .insert({
+            childId,
+            gameCodeName: game.gameCodeName,
+            parameterValue: 0
+          })
           .transacting(trx);
       })
     )
@@ -83,4 +97,14 @@ export async function updateConfig(values) {
       .then(trx.commit)
       .catch(trx.rollback);
   });
+}
+
+export async function getParameter(childId, gameCodeName) {
+  const query = db(tableNames.GAMES_CONFIG)
+    .select("parameterValue")
+    .where({ childId, gameCodeName })
+    .first();
+
+  const data = await query;
+  return data;
 }
