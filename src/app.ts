@@ -30,6 +30,10 @@ treehouse.setBasicSecurity(app, "*", {
 
 app.get("/", (_req, res) => res.send("server running"));
 
+app.get("/demo", (_req, res) =>
+  res.redirect("https://dixido-react.herokuapp.com/")
+);
+
 app.use(
   session({
     secret: "work hard",
