@@ -2,7 +2,7 @@ version: "3.3"
 services:
   postgres:
     image: sameersbn/postgresql:latest
-    container_name: pgsql_eindwerk
+    container_name: pgsql_spinnaker
     ports:
       - "5432:5432"
     environment:
