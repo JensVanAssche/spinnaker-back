@@ -40,6 +40,9 @@ app.use(
 
 app.use(`/api`, require(`./routes/`).routes);
 
+app.use(express.static("data/img"));
+app.use(express.static("data/pdf"));
+
 // treehouse.startServer(app, {
 //   title: "node_server",
 //   port: parseInt(process.env.PORT || "3000", 10),

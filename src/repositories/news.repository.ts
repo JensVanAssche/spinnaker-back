@@ -1,19 +1,19 @@
 import { tableNames } from "../constants";
 import { db } from "../lib/db";
 
-const defaultReturnValues = ["key", "value"];
+const defaultReturnValues = ["id", "title", "body", "image", "createdAt"];
 
 export async function getAll() {
-  const query = db(tableNames.CONTENT).select(defaultReturnValues);
+  const query = db(tableNames.NEWS).select(defaultReturnValues);
 
   const data = await query;
   return data;
 }
 
-export async function findByKey(key) {
-  const query = db(tableNames.CONTENT)
+export async function findById(id) {
+  const query = db(tableNames.NEWS)
     .select(defaultReturnValues)
-    .where({ key })
+    .where({ id })
     .first();
 
   const data = await query;
