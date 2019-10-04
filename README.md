@@ -1,1 +1,1 @@
-node server voor mijn eindwerk
+node server voor spinnaker

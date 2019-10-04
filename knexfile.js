@@ -48,7 +48,7 @@ const defaultConfig = {
 // Split into environments if we ever wish to tweak settings per environment
 module.exports = {
   test: Object.assign({}, defaultConfig, {
-    connection: "postgres://developer:developer@localhost:5432/eindwerk" // Static test DB
+    connection: "postgres://developer:developer@localhost:5432/spinnaker" // Static test DB
   }),
   staging: Object.assign({}, defaultConfig),
   development: Object.assign({}, defaultConfig),
