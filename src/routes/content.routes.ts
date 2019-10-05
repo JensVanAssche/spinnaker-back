@@ -7,6 +7,6 @@ export const routes = Router({ mergeParams: true })
   .get("/", handleAsyncFn((req, res) => controller.getAll(req, res)))
   .get(
     "/:key",
-    validateSchema(contentSchema),
+    validateSchema(contentSchema.getByKey),
     handleAsyncFn((req, res) => controller.getByKey(req, res))
   );
