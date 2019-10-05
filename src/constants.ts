@@ -9,5 +9,7 @@ export const tableNames = {
   CONTENT: "content",
   NEWS: "news",
   PUBLICATIONS: "publications",
-  PLAYERS: "players"
+  PLAYERS: "players",
+  RESULTS: "results",
+  PLACEMENTS: "placements"
 };
