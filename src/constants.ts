@@ -8,5 +8,6 @@ export const envs = {
 export const tableNames = {
   CONTENT: "content",
   NEWS: "news",
-  PUBLICATIONS: "publications"
+  PUBLICATIONS: "publications",
+  PLAYERS: "players"
 };
