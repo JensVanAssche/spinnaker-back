@@ -10,8 +10,10 @@ export const tableNames = {
   NEWS: "news",
   PUBLICATIONS: "publications",
   PLAYERS: "players",
-  RESULTS: "results",
-  PLACEMENTS: "placements",
+  RESULTS_PDF: "results_pdf",
+  RESULTS_TOURNAMENTS: "results_tournaments",
+  RESULTS_SCORES: "results_scores",
+  STANDINGS: "standings",
   CALENDAR: "calendar",
   HISTORY: "history"
 };

@@ -1,5 +1,5 @@
 exports.seed = async function(knex) {
-  await knex("results").del();
+  await knex("standings").del();
 
   const data = [
     {
@@ -59,5 +59,5 @@ exports.seed = async function(knex) {
     }
   ];
 
-  return knex("results").insert(data);
+  return knex("standings").insert(data);
 };

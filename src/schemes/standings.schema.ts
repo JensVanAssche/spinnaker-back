@@ -1,6 +1,6 @@
 import * as Joi from "joi";
 
-export const placementsSchema = {
+export const standingsSchema = {
   getByType: {
     params: {
       type: Joi.string()

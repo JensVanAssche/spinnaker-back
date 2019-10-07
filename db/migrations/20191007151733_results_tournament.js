@@ -1,5 +1,5 @@
 exports.up = async knex => {
-  await knex.schema.createTable("results", table => {
+  await knex.schema.createTable("results_tournaments", table => {
     table
       .uuid("id")
       .primary()
@@ -8,7 +8,7 @@ exports.up = async knex => {
     // Not nullable
     table.text("type").notNullable();
     table.text("title").notNullable();
-    table.text("pdf").notNullable();
+    table.text("date").notNullable();
 
     // Tracking
     table
@@ -34,5 +34,5 @@ exports.up = async knex => {
 };
 
 exports.down = knex => {
-  return knex.schema.dropTable("results");
+  return knex.schema.dropTable("results_tournaments");
 };

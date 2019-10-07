@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { handleAsyncFn, validateSchema } from "tree-house";
-import { placementsSchema } from "../schemes/placements.schema";
-import * as controller from "../controllers/placements.controller";
+import { standingsSchema } from "../schemes/standings.schema";
+import * as controller from "../controllers/standings.controller";
 
 export const routes = Router({ mergeParams: true }).get(
   "/:type",
-  validateSchema(placementsSchema.getByType),
+  validateSchema(standingsSchema.getByType),
   handleAsyncFn((req, res) => controller.getByType(req, res))
 );

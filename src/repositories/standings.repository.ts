@@ -4,7 +4,7 @@ import { db } from "../lib/db";
 const defaultReturnValues = ["id", "type", "title", "pdf", "createdAt"];
 
 export async function getByType(type) {
-  const query = db(tableNames.PLACEMENTS)
+  const query = db(tableNames.STANDINGS)
     .select(defaultReturnValues)
     .where({ type })
     .orderBy("createdAt", "desc");

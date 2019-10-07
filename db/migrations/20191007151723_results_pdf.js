@@ -1,5 +1,5 @@
 exports.up = async knex => {
-  await knex.schema.createTable("placements", table => {
+  await knex.schema.createTable("results_pdf", table => {
     table
       .uuid("id")
       .primary()
@@ -34,5 +34,5 @@ exports.up = async knex => {
 };
 
 exports.down = knex => {
-  return knex.schema.dropTable("placements");
+  return knex.schema.dropTable("results_pdf");
 };
