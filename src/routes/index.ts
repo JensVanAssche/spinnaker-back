@@ -7,6 +7,7 @@ import { routes as playersRoutes } from "./players.routes";
 import { routes as resultsRoutes } from "./results.routes";
 import { routes as placementsRoutes } from "./placements.routes";
 import { routes as calendarRoutes } from "./calendar.routes";
+import { routes as historyRoutes } from "./history.routes";
 
 export const routes = Router({ mergeParams: true })
   // .use("/auth", authRoutes)
@@ -16,4 +17,5 @@ export const routes = Router({ mergeParams: true })
   .use("/players", playersRoutes)
   .use("/results", resultsRoutes)
   .use("/placements", placementsRoutes)
-  .use("/calendar", calendarRoutes);
+  .use("/calendar", calendarRoutes)
+  .use("/history", historyRoutes);
