@@ -33,12 +33,6 @@ exports.seed = async function(knex) {
       image: "blank.png"
     },
     {
-      type: "boccianederland",
-      name: "Voornaam Achternaam",
-      subtitle: "BC 4",
-      image: "blank.png"
-    },
-    {
       type: "blazers1",
       name: "Voornaam Achternaam",
       subtitle: "T Stick",

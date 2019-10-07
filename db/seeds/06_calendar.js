@@ -27,12 +27,6 @@ exports.seed = async function(knex) {
       location: "Antwerpen"
     },
     {
-      type: "nederland",
-      date: "2019-11-15",
-      title: "Boccia spelen",
-      location: "Antwerpen"
-    },
-    {
       type: "hockey",
       date: "2019-11-27",
       title: "Hockey spelen",

@@ -4,22 +4,12 @@ exports.seed = async function(knex) {
   const data = [
     {
       type: "parantee",
-      title: "Resultaat 1",
+      title: "Tornooi 1 - 27 april 2019",
       pdf: "example.pdf"
     },
     {
       type: "parantee",
-      title: "Resultaat 2",
-      pdf: "example.pdf"
-    },
-    {
-      type: "boccianederland",
-      title: "Resultaat 1",
-      pdf: "example.pdf"
-    },
-    {
-      type: "boccianederland",
-      title: "Resultaat 2",
+      title: "Tornooi 2 - 28 april 2019",
       pdf: "example.pdf"
     }
   ];

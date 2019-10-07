@@ -6,10 +6,7 @@ exports.up = async knex => {
       .defaultTo(knex.raw("uuid_generate_v1mc()")); // Primary key
 
     // Not nullable
-    table
-      .uuid("tournament_id")
-      .notNullable()
-      .defaultTo(knex.raw("uuid_generate_v1mc()"));
+    table.uuid("tournament_id").defaultTo(knex.raw("uuid_generate_v1mc()"));
     table.text("team1").notNullable();
     table.text("team1_score").notNullable();
     table.text("team2").notNullable();
