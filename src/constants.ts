@@ -15,5 +15,6 @@ export const tableNames = {
   RESULTS_SCORES: "results_scores",
   STANDINGS: "standings",
   CALENDAR: "calendar",
-  HISTORY: "history"
+  HISTORY: "history",
+  VIDEOS: "videos"
 };
