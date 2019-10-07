@@ -28,11 +28,6 @@ exports.seed = async function(knex) {
       pdf: "example.pdf"
     },
     {
-      type: "interclub",
-      title: "example",
-      pdf: "example.pdf"
-    },
-    {
       type: "boccianederland",
       title: "example",
       pdf: "example.pdf"

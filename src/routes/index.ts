@@ -6,6 +6,7 @@ import { routes as publicationsRoutes } from "./publications.routes";
 import { routes as playersRoutes } from "./players.routes";
 import { routes as resultsRoutes } from "./results.routes";
 import { routes as placementsRoutes } from "./placements.routes";
+import { routes as calendarRoutes } from "./calendar.routes";
 
 export const routes = Router({ mergeParams: true })
   // .use("/auth", authRoutes)
@@ -14,4 +15,5 @@ export const routes = Router({ mergeParams: true })
   .use("/publications", publicationsRoutes)
   .use("/players", playersRoutes)
   .use("/results", resultsRoutes)
-  .use("/placements", placementsRoutes);
+  .use("/placements", placementsRoutes)
+  .use("/calendar", calendarRoutes);

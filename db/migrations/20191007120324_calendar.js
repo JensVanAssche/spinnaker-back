@@ -1,5 +1,5 @@
 exports.up = async knex => {
-  await knex.schema.createTable("players", table => {
+  await knex.schema.createTable("calendar", table => {
     table
       .uuid("id")
       .primary()
@@ -7,9 +7,9 @@ exports.up = async knex => {
 
     // Not nullable
     table.text("type").notNullable();
-    table.text("name").notNullable();
-    table.text("subtitle").notNullable();
-    table.text("image").notNullable();
+    table.text("date").notNullable();
+    table.text("title").notNullable();
+    table.text("location").notNullable();
 
     // Tracking
     table
@@ -35,5 +35,5 @@ exports.up = async knex => {
 };
 
 exports.down = knex => {
-  return knex.schema.dropTable("players");
+  return knex.schema.dropTable("calendar");
 };

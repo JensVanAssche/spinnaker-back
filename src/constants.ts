@@ -11,5 +11,6 @@ export const tableNames = {
   PUBLICATIONS: "publications",
   PLAYERS: "players",
   RESULTS: "results",
-  PLACEMENTS: "placements"
+  PLACEMENTS: "placements",
+  CALENDAR: "calendar"
 };
