@@ -13,7 +13,9 @@ export const tableNames = {
   RESULTS_PDF: "results_pdf",
   RESULTS_TOURNAMENTS: "results_tournaments",
   RESULTS_SCORES: "results_scores",
-  STANDINGS: "standings",
+  STANDINGS_PDF: "standings_pdf",
+  STANDINGS_TOURNAMENTS: "standings_tournaments",
+  STANDINGS_SCORES: "standings_scores",
   CALENDAR: "calendar",
   HISTORY: "history",
   VIDEOS: "videos"
