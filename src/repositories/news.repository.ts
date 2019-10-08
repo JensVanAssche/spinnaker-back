@@ -3,7 +3,14 @@ import { db } from "../lib/db";
 
 const defaultReturnValues = ["id", "title", "body", "image", "createdAt"];
 
-export async function getAll(offset) {
+export async function getAll() {
+  const query = db(tableNames.NEWS).select(defaultReturnValues);
+
+  const data = await query;
+  return data;
+}
+
+export async function getByOffset(offset) {
   const query = db(tableNames.NEWS)
     .select(defaultReturnValues)
     .orderBy("createdAt", "desc")

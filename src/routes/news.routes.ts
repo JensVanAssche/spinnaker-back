@@ -14,4 +14,5 @@ export const routes = Router({ mergeParams: true })
     validateSchema(newsSchema),
     handleAsyncFn((req, res) => controller.getById(req, res))
   )
-  .get("/latest", handleAsyncFn((req, res) => controller.getLatest(req, res)));
+  .get("/latest", handleAsyncFn((req, res) => controller.getLatest(req, res)))
+  .get("/count", handleAsyncFn((req, res) => controller.getCount(req, res)));

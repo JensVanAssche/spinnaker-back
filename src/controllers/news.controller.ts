@@ -86,3 +86,9 @@ export async function getLatest(_req, res) {
 
   res.send(result);
 }
+
+export async function getCount(_req, res) {
+  const result = await newsService.getCount();
+
+  res.send(result);
+}
