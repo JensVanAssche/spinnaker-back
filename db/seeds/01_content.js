@@ -49,20 +49,76 @@ exports.seed = async function(knex) {
     },
 
     {
-      key: "dansen",
+      key: "dansenOver",
       value: `<h3>Doelgroep</h3><p>Atleten met een motorische handicap. Officieel kan dit soms samen met een valide partner (niet bij Spinnaker vzw).</p><h3>Over de sport</h3><p>Rolstoeldansen kent een lage drempel. Dit betekent dat iedere rolstoelgebruiker, ongeacht de handicap, kan dansen. Deze sport wordt zowel in duo als in combi beoefend en dit zowel recreatief als competitief. Eventueel kan ook in groep gedanst worden.</p><h3>Bij Spinnaker</h3><p>Spinnaker vzw telt 7 dansgroepen. Elke groep bestaat uit 8 tot 12 dansers. De dansgroepen zijn gemengd: zowel rolstoelgebruikers als lopers maken deel uit van een dansgroep. Zo kunnen de lopers de rolstoelgebruikers helpen. De dansergroepen zijn ingedeeld volgens leeftijd en muzikale interesse. Samen met de monitoren zoeken ze gepaste muziek uit en werken ze haalbare choreografiëen uit. Deze oefenen ze wekelijks in. Ze laten regelmatig hun kunnen zien, zoals bv. bij schoolfeesten. Ook kinderen met een mentale handicap kunnen met de dansgroepen meedoen.</p>`
     },
     {
-      key: "hockey",
+      key: "hockeyOver",
       value: `<h3>Doelgroep</h3><p>Atleten met een motorische handicap, vaak mensen met een spierziekte.</p><h3>Over de sport</h3><p>E-hockey wordt gespeeld door personen die in het dagelijks leven in een elektrische rolstoel zitten. Er kan gespeeld worden met een stick in de hand, maar voor personen met een beperkte armfunctie kan een aangepaste stick bevestigd worden aan de rolstoel. Sinds 1993 is men binnen Parantee (toen V.L.G.) gestart met rolstoelhockey. Hoewel er een onderscheid is tussen rolstoelhockey dat gespeeld wordt vanuit een elektrische rolstoel (E-hockey) en vanuit een handbewogen rolstoel (H-hockey), wordt in België voorlopig enkel E-hockey in competitieverband beoefend.</p><p>In tweede en derde klasse is het veld 20 m lang en 10 m breed en wordt ze begrensd door balken met een hoogte van 20 cm. Er wordt gespeeld met een lichte plastic of kunststof stick (al dan niet bevestigd aan de rolwagen voor E-hockey) en een lichte plastic gatenbal. Een rolstoelhockey-team bestaat uit 1 keeper en 3 veldspelers (+ 4 wisselspelers). De duur van de wedstrijden voor E-hockey bedraagt 2 x 10 minuten. Tijdens de wedstrijd mogen de spelers niet met de rolstoelen tegen elkaar botsen. Een belangrijk aandachtspunt is dat het doelgebied (een halve cirkel van anderhalve meter diameter voor het doel) enkel voor de keeper toegankelijk is.</p><p>In de allerhoogste afdeling en de eerste klasse E-hockey wordt gespeeld op een super-league-veld. Het veld meet maximum 16 op 26 meter en er wordt met één veldspeler meer gespeeld. De wedstrijd bestaat uit twee helften van 20 minuten. Er mag ook achter het doel gereden worden.</p><h3>Rolstoelhockey in België</h3><p>De nationale competitie wordt afgewerkt in vier competitiedagen. E-hockey kent één super-league-klasse (competitie op zaterdag)  en een eerste, een tweede en een derde klasse (competitie op woensdag).</p><h3>Bij Spinnaker</h3><p>Spinnaker vzw telt zo’n 30 jongeren die rolstoelhockey beoefenen. Zij trainen twee-wekelijks en zijn ingedeeld in vier ploegen. Zij spelen in de diverse klasses. In onze ploegen spelen spelers met een vaste stick en met een losse stick door elkaar (dit conform de reglementen). De betere spelers spelen in de eerste ploeg, de anderen in de andere (vier) ploegen. Er zijn bij ons veel jongeren met een spierziekte die deze sport beoefenen. Het is de enige competiesport met veel actie die zij kunnen beoefenen. Wij treden aan in de Parantee-competitie onder de naam ‘Antwerp Wheelblazers’. Deze naam kozen de jongeren zelf in 2001.</p>`
     },
     {
-      key: "handbal",
+      key: "handbalOver",
       value: `<h3>Doelgroep</h3><p>Sporters met een beperking van de onderste ledematen die zich in een handbewogen rolstoel kunnen verplaatsen.</p><h3>Over de sport</h3><p>Rolstoelhandbal is een aangepaste versie van handbal voor manuele rolstoelgebruikers. De (gemengde) teams bestaan uit 5 veldspelers en een keeper die trachten de bal in het doel van de tegenstander te werpen. De spelers mogen de halve cirkel die de keeperszone afbakent niet betreden met de bal in de hand of op de schoot. Het veld is 40 op 20 meter en kan binnen of buiten gespeeld worden. De doelen zijn 3 meter breed en 1,60 meter hoog (iets lager dan bij het reguliere handbal). De bal moet op de schoot vervoerd worden en mag afgepakt worden door te tegenstander. Na 2 keer pushen met de rolwagen moet je botsen, werpen, passeren of doelen. De bal mag maar 3 seconden in de hand gehouden worden. Bij een werppoging mag de bal niet uit de handen worden geslagen. Niemand mag de vloer aanraken met zijn handen.</p><h3>Bij Spinnaker</h3><p>Rolstoelhandbal is een samenwerking met handbalclub OLSE uit Merksem. Dit is een Belgische topclub met heel veel teams, een levendige spirit en op zoek naar de mogelijkheden om een G-werking uit te bouwen. Omdat de club en hun trainingslocatie niet ver van het DVC gelegen is en er een aanbod is op woensdagnamiddag gingen we hier met Spinnaker zeer graag op in. Bij de eerste training (op 21 september 2016) waren er 6 enthousiastelingen en stonden er nog 2 te popelen om mee te doen. De verwachtingen zijn hoog gespannen.</p><h3>In België</h3><p>Deze sport staat nog in zijn kinderschoenen. Ze is overgewaaid vanuit Nederland waar er enkele G-handbalclubs actief zijn. Er werd wel al een lessenreeks bij Sporta over deze sport gegeven. De samenwerking OLSE/Spinnaker is de eerste in België. We hopen dat er nog volgen. Website OLSE Merksem: www.merksemhandbal.com</p>`
     },
     {
-      key: "zwemmen",
+      key: "zwemmenOver",
       value: `<h3>Doelgroep</h3><p>Atleten met een motorische handicap.</p><h3>Over de sport</h3><p>De zwemmers komen per handicap in verschillende klassen uit en dit in de traditionele stijlen. Bij zwemmers met motorische beperkingen zijn er slechts enkele, minimale aanpassingen aan de regels.</p><h3>Bij Spinnaker</h3><p>Het zwemmen is bij Spinnaker vzw een recreatief gebeuren. Er wordt 14-daags (op woensdagnamiddag) en 3-wekelijks (maandagavond) gezwommen. De zwemmers komen niet wekelijks aan bod omdat we maar een zeer klein zwembad hebben, omdat we elke zwemmer individueel begeleiden en er een zeer grote vraag is. Op maandagavond zwemmen we uitsluitend met kinderen en jongeren van het internaat van het Sint-Jozefinstituut. Op woensdagnamiddag zwemmen we met de overige leerlingen van het D.V.C. Sint-Jozefinstituut en de kinderen en jongeren van buitenaf. De doelstellingen van onze zwemsessies zijn watergewenning, het aanleren van diverse zwemstijlen, het aanscherpen van het uithoudingsvermogen en het progressief verlengen van de zwemafstand. Meestal wordt er gezwommen in het therapiebad (4x8 meter) van het Sint-Jozefinstituut. Met de betere afstandszwemmers gaan we regelmatig (maandelijks) buitenshuis zwemmen om de overstap van ons klein en warm therapiebad naar het grote, minder warme bad te maken. Ook het zwemmen in een afgebakende baan met andere zwemmers is wennen voor hen. Op het einde van het schooljaar gaan we met diegenen die het zwemmen goed onder de knie hebben, zwemmen voor een brevet. Dit is voor hen en voor ons een tastbaar bewijs van hun vorderingen van het afgelopen sportjaar en stimuleert hen om goed verder te doen. Eens ze goed kunnen zwemmen, stimuleren we de goede zwemmers om naar een zwemclub te trekken, aangezien ons zwembad wel heel klein is voor competitiezwemmers. </p>`
+    },
+    {
+      key: "headerImg",
+      value: "header.jpg"
+    },
+    {
+      key: "logoImg",
+      value: "logo_white.png"
+    },
+    {
+      key: "bocciaImg",
+      value: "boccia.jpg"
+    },
+    {
+      key: "dansenImg",
+      value: "dansen.jpg"
+    },
+    {
+      key: "handbalImg",
+      value: "handbal.jpg"
+    },
+    {
+      key: "zwemmenImg",
+      value: "zwemmen.jpg"
+    },
+    {
+      key: "hockeyImg",
+      value: "hockey.jpg"
+    },
+    {
+      key: "footerImgSteun",
+      value: "logo_sporting.jpg"
+    },
+    {
+      key: "footerImgSteun",
+      value: "logo_sportvlaanderen.png"
+    },
+    {
+      key: "footerImgAangesloten",
+      value: "logo_sporta.png"
+    },
+    {
+      key: "footerImgAangesloten",
+      value: "logo_parantee.png"
+    },
+    {
+      key: "footerImgOnderdeel",
+      value: "heder_logo.png"
+    },
+    {
+      key: "footerContact",
+      value: `<p>03 541 33 80</p><p>info@spinnaker-sport.be</p>`
+    },
+    {
+      key: "footerLocatie",
+      value: `<p>Heder Instituut</p><p>Galjoenstraat 2,</p><p>2030 Antwerpen</p>`
     }
   ];
 

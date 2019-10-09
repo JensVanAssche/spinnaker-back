@@ -5,7 +5,14 @@ export async function getAll(_req, res) {
   var myObject = {};
 
   for (let i = 0; i < result.length; i++) {
-    myObject[result[i].key] = result[i].value;
+    if (result[i].key.substring(0, 9) === "footerImg") {
+      if (!myObject[result[i].key]) {
+        myObject[result[i].key] = [];
+      }
+      myObject[result[i].key].push(result[i].value);
+    } else {
+      myObject[result[i].key] = result[i].value;
+    }
   }
 
   res.send(myObject);
