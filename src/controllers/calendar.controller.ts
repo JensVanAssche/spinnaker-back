@@ -3,6 +3,12 @@ import * as calendarService from "../services/calendar.service";
 export async function getByType(req, res) {
   const result = await calendarService.getByType(req.params.type);
 
+  if (req.params.type === "boccia") {
+    result.sort((a, b) =>
+      a.date.toLowerCase() > b.date.toLowerCase() ? 1 : -1
+    );
+  }
+
   var monthNames = [
     "januari",
     "februari",
