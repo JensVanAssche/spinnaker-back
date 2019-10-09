@@ -1,51 +1,28 @@
-// import * as authService from "../services/auth.service";
+import * as authService from "../services/auth.service";
 
-// export async function loginParent(req, res) {
-//   const data = await authService.loginParent(req.body);
+export async function login(req, res) {
+  const data = await authService.login(req.body);
 
-//   // Set current session data
-//   req.session.userId = data.id;
-//   req.session.type = "parent";
+  // Set current session data
+  req.session.user = 200;
 
-//   res.send(data);
-// }
+  res.send(data);
+}
 
-// export async function loginChild(req, res) {
-//   const data = await authService.loginChild(req.body);
+export async function findCurrentUser(req, res) {
+  if (req.session.user) {
+    res.send({
+      status: 200
+    });
+  } else {
+    throw "not logged in";
+  }
+}
 
-//   // Set current session data
-//   req.session.userId = data.id;
-//   req.session.type = "child";
+export async function logout(req, res) {
+  await authService.logout(req);
 
-//   res.send(data);
-// }
-
-// /**
-//  * Return logged in user's information
-//  */
-// export async function findCurrentUser(req, res) {
-//   if (req.session.userId) {
-//     let user;
-//     if (req.session.type === "parent") {
-//       user = await authService.findCurrentParent(req.session.userId);
-//       user["type"] = "parent";
-//     }
-
-//     if (req.session.type === "child") {
-//       user = await authService.findCurrentChild(req.session.userId);
-//       user["type"] = "child";
-//     }
-
-//     res.send(user);
-//   } else {
-//     throw "not logged in";
-//   }
-// }
-
-// export async function logout(req, res) {
-//   await authService.logout(req);
-
-//   res.send({
-//     status: 200
-//   });
-// }
+  res.send({
+    status: 200
+  });
+}
