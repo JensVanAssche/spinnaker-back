@@ -10,6 +10,7 @@ import { routes as calendarRoutes } from "./calendar.routes";
 import { routes as historyRoutes } from "./history.routes";
 import { routes as videosRoutes } from "./videos.routes";
 import { routes as photosRoutes } from "./photos.routes";
+import { routes as linksRoutes } from "./links.routes";
 
 export const routes = Router({ mergeParams: true })
   // .use("/auth", authRoutes)
@@ -22,4 +23,5 @@ export const routes = Router({ mergeParams: true })
   .use("/calendar", calendarRoutes)
   .use("/history", historyRoutes)
   .use("/videos", videosRoutes)
-  .use("/photos", photosRoutes);
+  .use("/photos", photosRoutes)
+  .use("/links", linksRoutes);

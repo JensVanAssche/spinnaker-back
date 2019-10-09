@@ -20,5 +20,6 @@ export const tableNames = {
   HISTORY: "history",
   VIDEOS: "videos",
   PHOTO_ALBUMS: "photo_albums",
-  PHOTOS: "photos"
+  PHOTOS: "photos",
+  LINKS: "links"
 };

@@ -93,26 +93,6 @@ exports.seed = async function(knex) {
       value: "hockey.jpg"
     },
     {
-      key: "footerImgSteun",
-      value: "logo_sporting.jpg"
-    },
-    {
-      key: "footerImgSteun",
-      value: "logo_sportvlaanderen.png"
-    },
-    {
-      key: "footerImgAangesloten",
-      value: "logo_sporta.png"
-    },
-    {
-      key: "footerImgAangesloten",
-      value: "logo_parantee.png"
-    },
-    {
-      key: "footerImgOnderdeel",
-      value: "heder_logo.png"
-    },
-    {
       key: "footerContact",
       value: `<p>03 541 33 80</p><p>info@spinnaker-sport.be</p>`
     },
