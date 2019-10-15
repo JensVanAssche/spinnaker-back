@@ -30,17 +30,17 @@ exports.seed = async function(knex) {
     {
       url: "https://www.wapper.be/",
       image: "we_zien_je_graag.png",
-      footer: ""
+      footer: "none"
     },
     {
       url: "https://nationaalteam.be/",
       image: "logo_belgium.png",
-      footer: ""
+      footer: "none"
     },
     {
       url: "http://www.merksemhandbal.com/",
       image: "merksem.jpg",
-      footer: ""
+      footer: "none"
     }
   ];
 
