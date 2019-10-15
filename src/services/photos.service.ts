@@ -2,7 +2,22 @@ import * as photosRepository from "../repositories/photos.repository";
 
 export async function getAll() {
   try {
-    const result = await photosRepository.getAll();
+    const result = await photosRepository.getAlbums();
+
+    for (let i = 0; i < result.length; i++) {
+      const photos = await photosRepository.getAlbum(result[i].id);
+      result[i]["photos"] = photos;
+    }
+
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getAlbums() {
+  try {
+    const result = await photosRepository.getAlbums();
 
     for (let i = 0; i < result.length; i++) {
       const photos = await photosRepository.getAlbum(result[i].id);

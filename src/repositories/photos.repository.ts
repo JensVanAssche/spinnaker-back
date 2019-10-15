@@ -4,7 +4,7 @@ import { db } from "../lib/db";
 const albumReturnValues = ["id", "title", "createdAt"];
 const photoReturnValues = ["id", "album_id", "image", "createdAt"];
 
-export async function getAll() {
+export async function getAlbums() {
   const query = db(tableNames.PHOTO_ALBUMS).select(albumReturnValues);
 
   const data = await query;
