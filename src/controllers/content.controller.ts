@@ -30,17 +30,22 @@ export async function updateImage(req, res) {
 }
 
 export async function updatePdf(req, res) {
-  const result1 = await contentService.updateContent("spinnakerEngagementPdf", {
-    value: req.file.originalname
-  });
-
-  const result2 = await contentService.updateContent(
+  const result1 = await contentService.updateContent(
     "spinnakerEngagementTitle",
     {
       value: req.body.text
     }
   );
 
-  result1.push(result2);
+  if (req.file) {
+    const result2 = await contentService.updateContent(
+      "spinnakerEngagementPdf",
+      {
+        value: req.file.originalname
+      }
+    );
+    result1.push(result2[0]);
+  }
+
   res.send(result1);
 }

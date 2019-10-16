@@ -1,12 +1,10 @@
 import { tableNames } from "../constants";
 import { db, execAndFind } from "../lib/db";
 
-const defaultReturnValues = ["id", "url", "image", "footer"];
+const defaultReturnValues = ["id", "url", "image", "footer", "createdAt"];
 
 export async function getAll() {
-  const query = db(tableNames.LINKS)
-    .select(defaultReturnValues)
-    .orderBy("createdAt");
+  const query = db(tableNames.LINKS).select(defaultReturnValues);
 
   const data = await query;
   return data;
@@ -15,7 +13,8 @@ export async function getAll() {
 export async function getLink(id) {
   const query = db(tableNames.LINKS)
     .select(defaultReturnValues)
-    .where({ id });
+    .where({ id })
+    .first();
 
   return query;
 }
