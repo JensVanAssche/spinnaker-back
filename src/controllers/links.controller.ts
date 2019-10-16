@@ -19,3 +19,8 @@ export async function addLink(req, res) {
   const result = await linksService.addLink(req.body);
   res.send(result);
 }
+
+export async function deleteLink(req, res) {
+  await linksService.deleteLink(req.params.id);
+  res.sendStatus(200);
+}

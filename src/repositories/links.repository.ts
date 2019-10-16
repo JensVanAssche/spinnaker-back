@@ -41,3 +41,12 @@ export async function addLink(body) {
 
   return execAndFind(query, "id", getLink);
 }
+
+export async function deleteLink(id) {
+  const query = db(tableNames.LINKS)
+    .del()
+    .where({ id });
+
+  const data = await query;
+  return data;
+}

@@ -35,3 +35,11 @@ export async function addLink(body) {
     throw error;
   }
 }
+
+export async function deleteLink(id) {
+  try {
+    return await linksRepository.deleteLink(id);
+  } catch (error) {
+    throw error;
+  }
+}
