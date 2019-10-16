@@ -15,3 +15,11 @@ export async function getByKey(key) {
     throw error;
   }
 }
+
+export async function updateContent(key, body) {
+  try {
+    return await contentRepository.updateContent(key, body);
+  } catch (error) {
+    throw error;
+  }
+}

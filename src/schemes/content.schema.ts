@@ -5,5 +5,11 @@ export const contentSchema = {
     params: {
       key: Joi.string()
     }
+  },
+  updateContent: {
+    params: {
+      key: Joi.string()
+    },
+    body: Joi.object()
   }
 };

@@ -19,3 +19,12 @@ export async function findByKey(key) {
   const data = await query;
   return data;
 }
+
+export async function updateContent(key, body) {
+  const query = db(tableNames.CONTENT)
+    .update(body, ["key", "value"])
+    .where("key", key);
+
+  const data = await query;
+  return data;
+}
