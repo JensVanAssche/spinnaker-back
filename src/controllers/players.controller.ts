@@ -1,10 +1,7 @@
 import * as playersService from "../services/players.service";
 
-export async function getByType(req, res) {
+export async function getOrdered(req, res) {
   const result = await playersService.getByType(req.params.type);
-  // result.sort((a, b) =>
-  //   a.subtitle.toLowerCase() > b.subtitle.toLowerCase() ? 1 : -1
-  // );
 
   const response = [];
 
@@ -31,4 +28,24 @@ export async function getByType(req, res) {
   });
 
   res.send(response);
+}
+
+export async function getUnordered(req, res) {
+  const result = await playersService.getByType(req.params.type);
+  res.send(result);
+}
+
+export async function updatePlayer(req, res) {
+  const result = await playersService.updatePlayer(req.params.id, req.body);
+  res.send(result);
+}
+
+export async function addPlayer(req, res) {
+  const result = await playersService.addPlayer(req.body);
+  res.send(result);
+}
+
+export async function deletePlayer(req, res) {
+  await playersService.deletePlayer(req.params.id);
+  res.sendStatus(200);
 }

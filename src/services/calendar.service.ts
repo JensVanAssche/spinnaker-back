@@ -18,3 +18,27 @@ export async function getByType(type) {
     }
   }
 }
+
+export async function updateCalendar(id, body) {
+  try {
+    return await calendarRepository.updateCalendar(id, body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addCalendar(body) {
+  try {
+    return await calendarRepository.addCalendar(body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteCalendar(id) {
+  try {
+    return await calendarRepository.deleteCalendar(id);
+  } catch (error) {
+    throw error;
+  }
+}
