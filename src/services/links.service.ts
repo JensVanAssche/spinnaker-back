@@ -19,3 +19,19 @@ export async function getFooter() {
     throw error;
   }
 }
+
+export async function updateLink(id, body) {
+  try {
+    return await linksRepository.updateLink(id, body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addLink(body) {
+  try {
+    return await linksRepository.addLink(body);
+  } catch (error) {
+    throw error;
+  }
+}
