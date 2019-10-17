@@ -26,33 +26,33 @@ export const routes = Router({ mergeParams: true })
     uploadPdf.single("file"),
     handleAsyncFn((req, res) => controller.updatePdf(req, res))
   )
-  // .put(
-  //   "/tournament/:id",
-  //   handleAsyncFn((req, res) => controller.updateTournament(req, res))
-  // )
-  // .put(
-  //   "/score/:id",
-  //   handleAsyncFn((req, res) => controller.updateScore(req, res))
-  // )
+  .put(
+    "/tournament/:id",
+    handleAsyncFn((req, res) => controller.updateTournament(req, res))
+  )
+  .put(
+    "/score/:id",
+    handleAsyncFn((req, res) => controller.updateScore(req, res))
+  )
   .post(
     "/pdf",
     uploadPdf.single("file"),
     handleAsyncFn((req, res) => controller.addPdf(req, res))
   )
-  // .post(
-  //   "/tournament",
-  //   handleAsyncFn((req, res) => controller.addTournament(req, res))
-  // )
-  // .post("/score", handleAsyncFn((req, res) => controller.addScore(req, res)))
+  .post(
+    "/tournament",
+    handleAsyncFn((req, res) => controller.addTournament(req, res))
+  )
+  .post("/score", handleAsyncFn((req, res) => controller.addScore(req, res)))
   .delete(
     "/pdf/:id",
     handleAsyncFn((req, res) => controller.deletePdf(req, res))
+  )
+  .delete(
+    "/tournament/:id",
+    handleAsyncFn((req, res) => controller.deleteTournament(req, res))
+  )
+  .delete(
+    "/score/:id",
+    handleAsyncFn((req, res) => controller.deleteScore(req, res))
   );
-// .delete(
-//   "/tournament/:id",
-//   handleAsyncFn((req, res) => controller.deleteTournament(req, res))
-// )
-// .delete(
-//   "/score/:id",
-//   handleAsyncFn((req, res) => controller.deleteScore(req, res))
-// );

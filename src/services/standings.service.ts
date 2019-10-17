@@ -21,35 +21,6 @@ export async function getByType(type) {
         });
       }
 
-      tournaments.sort((a, b) =>
-        a.date.toLowerCase() > b.date.toLowerCase() ? 1 : -1
-      );
-
-      var monthNames = [
-        "januari",
-        "februari",
-        "maart",
-        "april",
-        "mei",
-        "juni",
-        "juli",
-        "augustus",
-        "september",
-        "oktober",
-        "november",
-        "december"
-      ];
-
-      for (let i = 0; i < tournaments.length; i++) {
-        let date = new Date(tournaments[i].date);
-        var day = date.getDate();
-        var monthIndex = date.getMonth();
-        var year = date.getFullYear();
-
-        tournaments[i]["date"] =
-          day + " " + monthNames[monthIndex] + " " + year;
-      }
-
       return tournaments;
     } catch (error) {
       throw error;
