@@ -56,3 +56,27 @@ export async function getByType(type) {
     }
   }
 }
+
+export async function updatePdf(id, body) {
+  try {
+    return await resultsRepository.updatePdf(id, body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addPdf(body) {
+  try {
+    return await resultsRepository.addPdf(body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deletePdf(body) {
+  try {
+    return await resultsRepository.deletePdf(body);
+  } catch (error) {
+    throw error;
+  }
+}
