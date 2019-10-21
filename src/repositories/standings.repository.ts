@@ -17,7 +17,7 @@ export async function getPdfs(type) {
   const query = db(tableNames.STANDINGS_PDF)
     .select(pdfReturnValues)
     .where({ type })
-    .orderBy("createdAt", "desc");
+    .orderBy("createdAt");
 
   const data = await query;
   return data;
@@ -42,10 +42,21 @@ export async function getTournaments(type) {
   return data;
 }
 
+export async function getTournament(id) {
+  const query = db(tableNames.STANDINGS_TOURNAMENTS)
+    .select(tournamentReturnValues)
+    .where({ id })
+    .first();
+
+  const data = await query;
+  return data;
+}
+
 export async function getScores(tournament_id) {
   const query = db(tableNames.STANDINGS_SCORES)
     .select(scoresReturnValues)
-    .where({ tournament_id });
+    .where({ tournament_id })
+    .orderBy("createdAt");
 
   const data = await query;
   return data;
@@ -67,6 +78,65 @@ export async function addPdf(body) {
 
 export async function deletePdf(id) {
   const query = db(tableNames.STANDINGS_PDF)
+    .del()
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
+
+export async function updateTournament(id, body) {
+  const query = db(tableNames.STANDINGS_TOURNAMENTS)
+    .update(body, ["id"])
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
+
+export async function addTournament(body) {
+  const query = db(tableNames.STANDINGS_TOURNAMENTS).insert(body, ["id"]);
+
+  const data = await query;
+  return data;
+}
+
+export async function deleteTournament(id) {
+  const query = db(tableNames.STANDINGS_TOURNAMENTS)
+    .del()
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
+
+export async function deleteScoresByTournament(tournamentId) {
+  const query = db(tableNames.STANDINGS_SCORES)
+    .del()
+    .where({ tournamentId });
+
+  const data = await query;
+  return data;
+}
+
+export async function updateScore(id, body) {
+  const query = db(tableNames.STANDINGS_SCORES)
+    .update(body, ["id"])
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
+
+export async function addScore(body) {
+  const query = db(tableNames.STANDINGS_SCORES).insert(body, ["id"]);
+
+  const data = await query;
+  return data;
+}
+
+export async function deleteScore(id) {
+  const query = db(tableNames.STANDINGS_SCORES)
     .del()
     .where({ id });
 

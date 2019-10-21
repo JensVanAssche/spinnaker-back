@@ -17,7 +17,7 @@ export async function getPdfs(type) {
   const query = db(tableNames.RESULTS_PDF)
     .select(pdfReturnValues)
     .where({ type })
-    .orderBy("createdAt", "desc");
+    .orderBy("createdAt");
 
   const data = await query;
   return data;
