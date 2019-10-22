@@ -7,7 +7,7 @@ const photoReturnValues = ["id", "album_id", "image", "createdAt"];
 export async function getAlbums() {
   const query = db(tableNames.PHOTO_ALBUMS)
     .select(albumReturnValues)
-    .orderBy("createdAt");
+    .orderBy("createdAt", "desc");
 
   const data = await query;
   return data;

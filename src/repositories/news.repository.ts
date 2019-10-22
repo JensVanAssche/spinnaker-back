@@ -1,5 +1,5 @@
 import { tableNames } from "../constants";
-import { db } from "../lib/db";
+import { db, execAndFind } from "../lib/db";
 
 const defaultReturnValues = ["id", "title", "body", "image", "createdAt"];
 
@@ -36,6 +36,29 @@ export async function getLatest() {
     .select(defaultReturnValues)
     .orderBy("createdAt", "desc")
     .limit(3);
+
+  const data = await query;
+  return data;
+}
+
+export async function updateArticle(id, body) {
+  const query = db(tableNames.NEWS)
+    .update(body, ["id"])
+    .where({ id });
+
+  return execAndFind(query, "id", findById);
+}
+
+export async function addArticle(body) {
+  const query = db(tableNames.NEWS).insert(body, ["id"]);
+
+  return execAndFind(query, "id", findById);
+}
+
+export async function deleteArticle(id) {
+  const query = db(tableNames.NEWS)
+    .del()
+    .where({ id });
 
   const data = await query;
   return data;

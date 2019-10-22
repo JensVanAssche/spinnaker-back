@@ -32,3 +32,27 @@ export async function getCount() {
     throw error;
   }
 }
+
+export async function updateArticle(id, body) {
+  try {
+    return await newsRepository.updateArticle(id, body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addArticle(body) {
+  try {
+    return await newsRepository.addArticle(body);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteArticle(id) {
+  try {
+    return await newsRepository.deleteArticle(id);
+  } catch (error) {
+    throw error;
+  }
+}
