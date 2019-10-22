@@ -9,3 +9,28 @@ export async function getAll() {
   const data = await query;
   return data;
 }
+
+export async function updatePublication(id, body) {
+  const query = db(tableNames.PUBLICATIONS)
+    .update(body)
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
+
+export async function addPublication(body) {
+  const query = db(tableNames.PUBLICATIONS).insert(body);
+
+  const data = await query;
+  return data;
+}
+
+export async function deletePublication(id) {
+  const query = db(tableNames.PUBLICATIONS)
+    .del()
+    .where({ id });
+
+  const data = await query;
+  return data;
+}
