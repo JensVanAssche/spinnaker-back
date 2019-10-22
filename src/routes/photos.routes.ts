@@ -6,7 +6,18 @@ import * as controller from "../controllers/photos.controller";
 export const routes = Router({ mergeParams: true })
   .get("/all", handleAsyncFn((req, res) => controller.getAll(req, res)))
   .get("/albums", handleAsyncFn((req, res) => controller.getAlbums(req, res)))
-  .get(
-    "/album/:id",
-    handleAsyncFn((req, res) => controller.getAlbum(req, res))
+  .get("/album/:id", handleAsyncFn((req, res) => controller.getAlbum(req, res)))
+  .put(
+    "/albums/:id",
+    handleAsyncFn((req, res) => controller.updateAlbum(req, res))
+  )
+  .post("/albums", handleAsyncFn((req, res) => controller.addAlbum(req, res)))
+  .post("/photos", handleAsyncFn((req, res) => controller.addPhoto(req, res)))
+  .delete(
+    "/albums/:id",
+    handleAsyncFn((req, res) => controller.deleteAlbum(req, res))
+  )
+  .delete(
+    "/photos/:id",
+    handleAsyncFn((req, res) => controller.deletePhoto(req, res))
   );

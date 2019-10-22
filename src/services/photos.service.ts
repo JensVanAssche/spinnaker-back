@@ -43,3 +43,49 @@ export async function getAlbum(id) {
     throw error;
   }
 }
+
+export async function updateAlbum(id, body) {
+  try {
+    await photosRepository.updateAlbum(id, body);
+    return this.getAll();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addAlbum(body) {
+  try {
+    await photosRepository.addAlbum(body);
+    return this.getAll();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addPhoto(body) {
+  try {
+    await photosRepository.addPhoto(body);
+    return this.getAll();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteAlbum(id) {
+  try {
+    await photosRepository.deleteAlbum(id);
+    await photosRepository.deletePhotos(id);
+    return this.getAll();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deletePhoto(id) {
+  try {
+    await photosRepository.deletePhoto(id);
+    return this.getAll();
+  } catch (error) {
+    throw error;
+  }
+}
