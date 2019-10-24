@@ -4,8 +4,12 @@ import { handleAsyncFn } from "tree-house";
 import * as controller from "../controllers/photos.controller";
 
 export const routes = Router({ mergeParams: true })
-  .get("/all", handleAsyncFn((req, res) => controller.getAll(req, res)))
-  .get("/albums", handleAsyncFn((req, res) => controller.getAlbums(req, res)))
+  .get("/all/:offset", handleAsyncFn((req, res) => controller.getAll(req, res)))
+  .get(
+    "/albums/:offset",
+    handleAsyncFn((req, res) => controller.getAlbums(req, res))
+  )
+  .get("/count", handleAsyncFn((req, res) => controller.getCount(req, res)))
   .get("/album/:id", handleAsyncFn((req, res) => controller.getAlbum(req, res)))
   .put(
     "/albums/:id",

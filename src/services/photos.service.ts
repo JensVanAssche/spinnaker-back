@@ -1,8 +1,8 @@
 import * as photosRepository from "../repositories/photos.repository";
 
-export async function getAll() {
+export async function getAll(offset) {
   try {
-    const result = await photosRepository.getAlbums();
+    const result = await photosRepository.getAlbums(offset);
 
     for (let i = 0; i < result.length; i++) {
       const photos = await photosRepository.getAlbum(result[i].id);
@@ -15,17 +15,28 @@ export async function getAll() {
   }
 }
 
-export async function getAlbums() {
+export async function getAlbums(offset) {
   try {
-    const result = await photosRepository.getAlbums();
+    const result = await photosRepository.getAlbums(offset);
 
     for (let i = 0; i < result.length; i++) {
       const photos = await photosRepository.getAlbum(result[i].id);
-      const thumbnail = photos[0].image;
-      result[i]["thumbnail"] = thumbnail;
+      if (photos.length > 0) {
+        const thumbnail = photos[0].image;
+        result[i]["thumbnail"] = thumbnail;
+      }
     }
 
     return result;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getCount() {
+  try {
+    const result = await photosRepository.getAll();
+    return { length: result.length };
   } catch (error) {
     throw error;
   }

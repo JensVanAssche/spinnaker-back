@@ -1,12 +1,17 @@
 import * as photosService from "../services/photos.service";
 
-export async function getAll(_req, res) {
-  const result = await photosService.getAll();
+export async function getAll(req, res) {
+  const result = await photosService.getAll(req.params.offset);
   res.send(result);
 }
 
-export async function getAlbums(_req, res) {
-  const result = await photosService.getAlbums();
+export async function getAlbums(req, res) {
+  const result = await photosService.getAlbums(req.params.offset);
+  res.send(result);
+}
+
+export async function getCount(_req, res) {
+  const result = await photosService.getCount();
   res.send(result);
 }
 

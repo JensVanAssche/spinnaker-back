@@ -4,10 +4,18 @@ import { db } from "../lib/db";
 const albumReturnValues = ["id", "title", "createdAt"];
 const photoReturnValues = ["id", "album_id", "image", "createdAt"];
 
-export async function getAlbums() {
+export async function getAll() {
+  const query = db(tableNames.PHOTO_ALBUMS).select(albumReturnValues);
+  const data = await query;
+  return data;
+}
+
+export async function getAlbums(offset) {
   const query = db(tableNames.PHOTO_ALBUMS)
     .select(albumReturnValues)
-    .orderBy("createdAt", "desc");
+    .orderBy("createdAt", "desc")
+    .limit(9)
+    .offset(offset);
 
   const data = await query;
   return data;
