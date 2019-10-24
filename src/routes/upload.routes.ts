@@ -14,8 +14,6 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage });
 
-export const routes = Router({ mergeParams: true }).post(
-  "/",
-  upload.single("file"),
-  handleAsyncFn(controller.upload)
-);
+export const routes = Router({ mergeParams: true })
+  .post("/", upload.single("file"), handleAsyncFn(controller.upload))
+  .post("/multiple", upload.array("file"), handleAsyncFn(controller.upload));

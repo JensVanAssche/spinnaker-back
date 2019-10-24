@@ -30,8 +30,8 @@ export async function addAlbum(req, res) {
   res.send(result);
 }
 
-export async function addPhoto(req, res) {
-  const result = await photosService.addPhoto(req.body);
+export async function addPhotos(req, res) {
+  const result = await photosService.addPhotos(req.body);
   res.send(result);
 }
 

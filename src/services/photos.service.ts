@@ -73,9 +73,14 @@ export async function addAlbum(body) {
   }
 }
 
-export async function addPhoto(body) {
+export async function addPhotos(body) {
   try {
-    await photosRepository.addPhoto(body);
+    for (let i = 0; i < body.images.length; i++) {
+      await photosRepository.addPhoto({
+        albumId: body.albumId,
+        image: body.images[i]
+      });
+    }
     return this.getAll();
   } catch (error) {
     throw error;

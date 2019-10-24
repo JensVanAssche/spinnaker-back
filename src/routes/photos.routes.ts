@@ -16,7 +16,7 @@ export const routes = Router({ mergeParams: true })
     handleAsyncFn((req, res) => controller.updateAlbum(req, res))
   )
   .post("/albums", handleAsyncFn((req, res) => controller.addAlbum(req, res)))
-  .post("/photos", handleAsyncFn((req, res) => controller.addPhoto(req, res)))
+  .post("/photos", handleAsyncFn((req, res) => controller.addPhotos(req, res)))
   .delete(
     "/albums/:id",
     handleAsyncFn((req, res) => controller.deleteAlbum(req, res))
