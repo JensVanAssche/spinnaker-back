@@ -8,6 +8,23 @@ export async function getAll() {
   }
 }
 
+export async function getByOffset(offset) {
+  try {
+    return await videosRepository.getByOffset(offset);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getCount() {
+  try {
+    const result = await videosRepository.getAll();
+    return { length: result.length };
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function updateVideo(id, body) {
   try {
     return await videosRepository.updateVideo(id, body);

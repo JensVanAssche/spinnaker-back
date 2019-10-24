@@ -12,6 +12,17 @@ export async function getAll() {
   return data;
 }
 
+export async function getByOffset(offset) {
+  const query = db(tableNames.VIDEOS)
+    .select(defaultReturnValues)
+    .orderBy("createdAt", "desc")
+    .limit(5)
+    .offset(offset);
+
+  const data = await query;
+  return data;
+}
+
 export async function getVideo(id) {
   const query = db(tableNames.VIDEOS)
     .select(defaultReturnValues)
