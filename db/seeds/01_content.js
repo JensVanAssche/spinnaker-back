@@ -96,6 +96,10 @@ exports.seed = async function(knex) {
       value: "header.jpg"
     },
     {
+      key: "wheelblazersImg",
+      value: "wheelblazers.png"
+    },
+    {
       key: "footerContact",
       value: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="underline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>`
     },
