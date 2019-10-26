@@ -8,7 +8,7 @@ exports.up = async knex => {
     // Not nullable
     table.text("title").notNullable();
     table.text("body").notNullable();
-    table.text("image").notNullable();
+    table.text("image");
 
     // Tracking
     table
