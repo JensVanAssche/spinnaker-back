@@ -77,23 +77,23 @@ exports.seed = async function(knex) {
     },
     {
       key: "bocciaImg",
-      value: "header.jpg"
+      value: "boccia.jpg"
     },
     {
       key: "dansenImg",
-      value: "header.jpg"
+      value: "dansen.jpg"
     },
     {
       key: "handbalImg",
-      value: "header.jpg"
+      value: "handbal.jpg"
     },
     {
       key: "zwemmenImg",
-      value: "header.jpg"
+      value: "zwemmen.jpg"
     },
     {
       key: "hockeyImg",
-      value: "header.jpg"
+      value: "hockey.jpg"
     },
     {
       key: "wheelblazersImg",
