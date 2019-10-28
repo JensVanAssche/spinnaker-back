@@ -28,7 +28,9 @@ treehouse.setBasicSecurity(app, "*", {
   }
 });
 
-app.get("/", (_req, res) => res.send("server running"));
+app.use(express.static("data/img"));
+app.use(express.static("data/pdf"));
+app.use(express.static("data/site"));
 
 app.use(
   session({
@@ -40,15 +42,9 @@ app.use(
 
 app.use(`/api`, require(`./routes/`).routes);
 
-app.use(express.static("data/img"));
-app.use(express.static("data/pdf"));
-
-// treehouse.startServer(app, {
-//   title: "node_server",
-//   port: parseInt(process.env.PORT || "3000", 10),
-//   pre: () => {},
-//   post: () => {}
-// });
+app.get("/*", function(_req, res) {
+  res.sendFile("data/site/index.html", { root: __dirname });
+});
 
 app.listen(process.env.PORT || 3000, function() {
   console.log(
