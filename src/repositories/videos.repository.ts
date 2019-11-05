@@ -17,7 +17,7 @@ export async function getByOffset(offset) {
     .select(defaultReturnValues)
     .orderBy("createdAt", "desc")
     .limit(5)
-    .offset(offset);
+    .offset(parseInt(offset));
 
   const data = await query;
   return data;

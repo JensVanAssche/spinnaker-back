@@ -1,6 +1,4 @@
-exports.seed = async function(knex) {
-  await knex("links").del();
-
+exports.seed = function(knex, Promise) {
   const data = [
     {
       url: "https://antwerpen.be/nl/overzicht/sporting-a",
@@ -44,5 +42,5 @@ exports.seed = async function(knex) {
     }
   ];
 
-  return knex("links").insert(data);
+  return Promise.all([knex("links").del(), knex("links").insert(data)]);
 };

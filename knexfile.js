@@ -14,12 +14,18 @@ function snakeCase(str) {
 }
 
 const defaultConfig = {
-  client: "pg",
+  client: "mysql",
   pool: {
     min: 0,
     max: 5
   },
-  connection: process.env.DATABASE_URL,
+  connection: {
+    port: process.env.DATABASE_PORT,
+    host: process.env.DATABASE_HOST,
+    database: process.env.DATABASE_NAME,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD
+  },
   useNullAsDefault: true,
   debug: process.env.DB_LOG_LEVEL === "debug" ? true : false,
   migrations: {
@@ -52,5 +58,11 @@ module.exports = {
   }),
   staging: Object.assign({}, defaultConfig),
   development: Object.assign({}, defaultConfig),
-  production: Object.assign({}, defaultConfig)
+  production: Object.assign({}, defaultConfig),
+  onInsertTrigger: table => `
+    CREATE TRIGGER before_insert_${table}
+    BEFORE INSERT ON ${table}
+    FOR EACH ROW
+    SET new.id = uuid();
+    `
 };

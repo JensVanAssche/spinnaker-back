@@ -1,5 +1,5 @@
 import * as authReposity from "../repositories/auth.repository";
-import { comparePassword } from "tree-house-authentication";
+var bcrypt = require('bcryptjs');
 
 export async function login(payload) {
   const { password } = payload;
@@ -7,7 +7,7 @@ export async function login(payload) {
     const admin = await authReposity.getAdmin();
 
     // Match password
-    const passwordMatch = await comparePassword(password, admin.password);
+    const passwordMatch = bcrypt.compareSync(password, admin.password); // true
     if (!passwordMatch) throw "invalid password";
 
     return admin;

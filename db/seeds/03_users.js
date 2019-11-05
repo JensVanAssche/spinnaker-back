@@ -1,19 +1,15 @@
-const { getHashedPassword } = require("tree-house-authentication");
+var bcrypt = require('bcryptjs');
 
-exports.seed = async function(knex) {
-  await knex("users").del();
-
-  const hashedPw = await getHashedPassword(
-    process.env.INITIAL_SEED_PASSWORD,
-    parseInt("10", 10)
-  );
+exports.seed = function(knex, Promise) {
+  var salt = bcrypt.genSaltSync(10);
+  var hash = bcrypt.hashSync(process.env.INITIAL_SEED_PASSWORD, salt);
 
   const data = [
     {
       name: "admin",
-      password: hashedPw
+      password: hash
     }
   ];
 
-  return knex("users").insert(data);
+  return Promise.all([knex("users").del(), knex("users").insert(data)]);
 };

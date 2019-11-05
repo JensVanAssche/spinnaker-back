@@ -15,7 +15,7 @@ export async function getAlbums(offset) {
     .select(albumReturnValues)
     .orderBy("createdAt", "desc")
     .limit(9)
-    .offset(offset);
+    .offset(parseInt(offset));
 
   const data = await query;
   return data;

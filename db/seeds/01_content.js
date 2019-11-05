@@ -1,6 +1,4 @@
-exports.seed = async function(knex) {
-  await knex("content").del();
-
+exports.seed = function(knex, Promise) {
   const data = [
     {
       key: "spinnakerOver",
@@ -125,5 +123,5 @@ exports.seed = async function(knex) {
     }
   ];
 
-  return knex("content").insert(data);
+  return Promise.all([knex("content").del(), knex("content").insert(data)]);
 };
