@@ -1,7 +1,6 @@
 import { Router } from "express";
 var multer = require("multer");
 import { handleAsyncFn } from "tree-house";
-// import { publicationsSchema } from "../schemes/publications.schema";
 import * as controller from "../controllers/publications.controller";
 
 var pdfStorage = multer.diskStorage({

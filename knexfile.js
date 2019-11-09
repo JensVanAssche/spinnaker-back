@@ -14,18 +14,13 @@ function snakeCase(str) {
 }
 
 const defaultConfig = {
-  client: "mysql",
+  client: "pg",
   pool: {
     min: 0,
     max: 5
   },
-  connection: {
-    port: process.env.DATABASE_PORT,
-    host: process.env.DATABASE_HOST,
-    database: process.env.DATABASE_NAME,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD
-  },
+  // connection: "postgres://spinnak1_developer:developer@localhost:5432/spinnak1_spinnaker",
+  connection: process.env.DATABASE_URL,
   useNullAsDefault: true,
   debug: process.env.DB_LOG_LEVEL === "debug" ? true : false,
   migrations: {
@@ -54,15 +49,10 @@ const defaultConfig = {
 // Split into environments if we ever wish to tweak settings per environment
 module.exports = {
   test: Object.assign({}, defaultConfig, {
-    connection: "postgres://developer:developer@localhost:5432/spinnaker" // Static test DB
+    connection:
+      "postgres://spinnak1_developer:developer@localhost:5432/spinnak1_spinnaker" // Static test DB
   }),
   staging: Object.assign({}, defaultConfig),
   development: Object.assign({}, defaultConfig),
-  production: Object.assign({}, defaultConfig),
-  onInsertTrigger: table => `
-    CREATE TRIGGER before_insert_${table}
-    BEFORE INSERT ON ${table}
-    FOR EACH ROW
-    SET new.id = uuid();
-    `
+  production: Object.assign({}, defaultConfig)
 };

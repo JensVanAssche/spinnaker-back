@@ -1,27 +1,24 @@
-const { onInsertTrigger } = require("../../knexfile");
+exports.up = async knex => {
+  await knex.schema.createTable("videos", table => {
+    table
+      .uuid("id")
+      .primary()
+      .defaultTo(knex.raw("uuid_generate_v1mc()")); // Primary key
 
-exports.up = function(knex, Promise) {
-  return Promise.all([
-    knex.schema
-      .createTable("videos", table => {
-        table.uuid("id").primary();
+    // Not nullable
+    table.text("title").notNullable();
+    table.text("url").notNullable();
 
-        // Not nullable
-        table.text("title").notNullable();
-        table.text("url").notNullable();
-
-        // Tracking
-        table
-          .timestamp("created_at")
-          .notNullable()
-          .defaultTo(knex.fn.now());
-        table
-          .timestamp("updated_at")
-          .notNullable()
-          .defaultTo(knex.fn.now());
-      })
-      .then(() => knex.raw(onInsertTrigger("videos")))
-  ]);
+    // Tracking
+    table
+      .timestamp("created_at")
+      .notNullable()
+      .defaultTo(knex.fn.now());
+    table
+      .timestamp("updated_at")
+      .notNullable()
+      .defaultTo(knex.fn.now());
+  });
 };
 
 exports.down = knex => {

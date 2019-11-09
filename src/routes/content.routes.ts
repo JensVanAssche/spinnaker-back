@@ -1,7 +1,6 @@
 import { Router } from "express";
 var multer = require("multer");
-import { handleAsyncFn, validateSchema } from "tree-house";
-import { contentSchema } from "../schemes/content.schema";
+import { handleAsyncFn } from "tree-house";
 import * as controller from "../controllers/content.controller";
 
 var imgStorage = multer.diskStorage({
@@ -27,14 +26,9 @@ var uploadPdf = multer({ storage: pdfStorage });
 
 export const routes = Router({ mergeParams: true })
   .get("/data", handleAsyncFn((req, res) => controller.getAll(req, res)))
-  .get(
-    "/data/:key",
-    validateSchema(contentSchema.getByKey),
-    handleAsyncFn((req, res) => controller.getByKey(req, res))
-  )
+  .get("/data/:key", handleAsyncFn((req, res) => controller.getByKey(req, res)))
   .put(
     "/data/:key",
-    validateSchema(contentSchema.updateContent),
     handleAsyncFn((req, res) => controller.updateContent(req, res))
   )
   .post(
