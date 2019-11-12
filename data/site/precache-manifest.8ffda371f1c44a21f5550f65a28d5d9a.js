@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2941202d2d0c089a64ca168aa6e51384",
+    "revision": "7ee75e35067b69f34159eaa97f4c3f9d",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.17081656.chunk.css"
   },
   {
-    "revision": "fbdb598c534054e48cb3",
-    "url": "/static/css/main.cf896a28.chunk.css"
+    "revision": "ed77b37490ab4eeead9d",
+    "url": "/static/css/main.50368dcb.chunk.css"
   },
   {
     "revision": "a100b65fd82e15ca4f8e",
     "url": "/static/js/2.32d97b18.chunk.js"
   },
   {
-    "revision": "fbdb598c534054e48cb3",
-    "url": "/static/js/main.7ae595ab.chunk.js"
+    "revision": "ed77b37490ab4eeead9d",
+    "url": "/static/js/main.7f3f697a.chunk.js"
   },
   {
     "revision": "f9c7a0d1335922274adb",
@@ -90,5 +90,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "9b62dc86f936227b3f7b367bd0b6c05e",
+    "url": "/static/media/twcen.9b62dc86.TTF"
+  },
+  {
+    "revision": "5d246fe92931a92e7355fe67b5ad609f",
+    "url": "/static/media/twcen_bold.5d246fe9.TTF"
   }
 ]);
