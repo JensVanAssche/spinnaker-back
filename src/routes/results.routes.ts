@@ -5,7 +5,7 @@ import * as controller from "../controllers/results.controller";
 
 var pdfStorage = multer.diskStorage({
   destination: function(_req, _file, cb) {
-    cb(null, "data/pdf");
+    cb(null, "./build/data/pdf");
   },
   filename: function(_req, file, cb) {
     cb(null, file.originalname);
@@ -15,7 +15,10 @@ var pdfStorage = multer.diskStorage({
 var uploadPdf = multer({ storage: pdfStorage });
 
 export const routes = Router({ mergeParams: true })
-  .get("/:type", handleAsyncFn((req, res) => controller.getByType(req, res)))
+  .get(
+    "/:type",
+    handleAsyncFn((req, res) => controller.getByType(req, res))
+  )
   .post(
     "/pdf/:id",
     uploadPdf.single("file"),
@@ -38,7 +41,10 @@ export const routes = Router({ mergeParams: true })
     "/tournament",
     handleAsyncFn((req, res) => controller.addTournament(req, res))
   )
-  .post("/score", handleAsyncFn((req, res) => controller.addScore(req, res)))
+  .post(
+    "/score",
+    handleAsyncFn((req, res) => controller.addScore(req, res))
+  )
   .delete(
     "/pdf/:id",
     handleAsyncFn((req, res) => controller.deletePdf(req, res))
