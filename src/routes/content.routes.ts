@@ -1,5 +1,6 @@
 import { Router } from "express";
 var multer = require("multer");
+var path = require("path");
 import { handleAsyncFn } from "tree-house";
 import * as controller from "../controllers/content.controller";
 
@@ -21,8 +22,38 @@ var pdfStorage = multer.diskStorage({
   }
 });
 
-var uploadImg = multer({ storage: imgStorage });
-var uploadPdf = multer({ storage: pdfStorage });
+var uploadImg = multer({
+  fileFilter: function(_req, file, cb) {
+    var filetypes = /png|jpg|jpeg/;
+    var mimetype = filetypes.test(file.mimetype);
+    var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+
+    if (mimetype && extname) {
+      return cb(null, true);
+    }
+
+    cb(
+      "Error: File upload only supports the following filetypes - " + filetypes
+    );
+  },
+  storage: imgStorage
+});
+var uploadPdf = multer({
+  fileFilter: function(_req, file, cb) {
+    var filetypes = /pdf/;
+    var mimetype = filetypes.test(file.mimetype);
+    var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+
+    if (mimetype && extname) {
+      return cb(null, true);
+    }
+
+    cb(
+      "Error: File upload only supports the following filetypes - " + filetypes
+    );
+  },
+  storage: pdfStorage
+});
 
 export const routes = Router({ mergeParams: true })
   .get(
