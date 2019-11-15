@@ -1,6 +1,4 @@
 import { Router } from "express";
-import { handleAsyncFn } from "tree-house";
-import * as controller from "../controllers/upload.controller";
 var multer = require("multer");
 var path = require("path");
 
@@ -31,5 +29,9 @@ var upload = multer({
 });
 
 export const routes = Router({ mergeParams: true })
-  .post("/", upload.single("file"), handleAsyncFn(controller.upload))
-  .post("/multiple", upload.array("file"), handleAsyncFn(controller.upload));
+  .post("/", upload.single("file"), (_req: any, res) => {
+    res.sendStatus(200);
+  })
+  .post("/multiple", upload.array("file"), async (_req: any, res) => {
+    res.sendStatus(200);
+  });
