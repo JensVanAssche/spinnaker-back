@@ -21,14 +21,6 @@ export async function updateContent(req, res) {
   res.send(result[0]);
 }
 
-export async function updateImage(req, res) {
-  const result = await contentService.updateContent(req.params.key, {
-    value: req.file.originalname
-  });
-
-  res.send(result[0]);
-}
-
 export async function updatePdf(req, res) {
   const result1 = await contentService.updateContent(
     "spinnakerEngagementTitle",

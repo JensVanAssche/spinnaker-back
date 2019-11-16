@@ -1,10 +1,12 @@
 import { Router } from "express";
+import * as controller from "../controllers/upload.controller";
+import { handleAsyncFn } from "tree-house";
 var multer = require("multer");
 var path = require("path");
 
 var storage = multer.diskStorage({
   destination: function(_req, _file, cb) {
-    cb(null, "./build/data/img");
+    cb(null, __dirname + "/../data");
   },
   filename: function(_req, file, cb) {
     cb(null, file.originalname);
@@ -29,9 +31,13 @@ var upload = multer({
 });
 
 export const routes = Router({ mergeParams: true })
-  .post("/", upload.single("file"), (_req: any, res) => {
-    res.sendStatus(200);
-  })
-  .post("/multiple", upload.array("file"), async (_req: any, res) => {
-    res.sendStatus(200);
-  });
+  .post(
+    "/single/:size",
+    upload.single("file"),
+    handleAsyncFn((req, res) => controller.upload(req, res))
+  )
+  .post(
+    "/multiple/:size",
+    upload.array("file"),
+    handleAsyncFn((req, res) => controller.uploadMultiple(req, res))
+  );
