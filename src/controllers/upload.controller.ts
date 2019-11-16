@@ -8,9 +8,32 @@ export async function upload(req, res) {
   sharp.concurrency(1);
   sharp.cache(false);
 
-  await sharp(req.file.path)
-    .resize(parseInt(req.params.size))
-    .toFile(path.resolve(__dirname, "../data/img", image));
+  if (req.params.size === "2000") {
+    await sharp(req.file.path)
+      .resize(2000)
+      .toFile(path.resolve(__dirname, "../data/img", "large_" + image));
+
+    await sharp(req.file.path)
+      .resize(1000)
+      .toFile(path.resolve(__dirname, "../data/img", "medium_" + image));
+
+    await sharp(req.file.path)
+      .resize(500)
+      .toFile(path.resolve(__dirname, "../data/img", "small_" + image));
+  } else if (req.params.size === "1200") {
+    await sharp(req.file.path)
+      .resize(1200)
+      .toFile(path.resolve(__dirname, "../data/img", "large_" + image));
+
+    await sharp(req.file.path)
+      .resize(600)
+      .toFile(path.resolve(__dirname, "../data/img", "small_" + image));
+  } else {
+    await sharp(req.file.path)
+      .resize(parseInt(req.params.size))
+      .toFile(path.resolve(__dirname, "../data/img", image));
+  }
+
   fs.unlinkSync(req.file.path);
   return res.sendStatus(200);
 }

@@ -13,11 +13,9 @@ dotenvSafe.load({
 treehouse.setBodyParser(app, "*");
 treehouse.setBasicSecurity(app, "*", {
   cors: {
-    origin: (
-      "https://www.spinnaker-sport.be,http://localhost:3000,http://localhost:3001" ||
-      "*"
-    ).split(","),
-    // origin: (process.env.ALLOWED_CORS_DOMAINS || "*").split(","),
+    origin: "https://www.spinnaker-sport.be,http://localhost:3000,http://localhost:3001".split(
+      ","
+    ),
     methods: ["GET", "PUT", "POST", "DELETE", "PATCH"],
     allowedHeaders: [
       "Cache-Control",
