@@ -3,7 +3,7 @@ var sharp = require("sharp");
 var fs = require("fs");
 
 export async function upload(req, res) {
-  const { filename: image } = req.file;
+  const image = req.body.text;
 
   sharp.concurrency(1);
   sharp.cache(false);
@@ -40,7 +40,7 @@ export async function upload(req, res) {
 
 export async function uploadMultiple(req, res) {
   for (let i = 0; i < req.files.length; i++) {
-    const { filename: image } = req.files[i];
+    const image = req.body.text[i];
 
     sharp.concurrency(1);
     sharp.cache(false);

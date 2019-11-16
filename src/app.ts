@@ -30,13 +30,6 @@ treehouse.setBasicSecurity(app, "*", {
   }
 });
 
-app.use(express.static("data/img"));
-app.use(express.static("data/pdf"));
-app.use(express.static("data/site"));
-app.use(express.static("build/data/img"));
-app.use(express.static("build/data/pdf"));
-app.use(express.static("build/data/site"));
-
 app.use(
   session({
     secret: "work hard",
@@ -47,7 +40,25 @@ app.use(
 
 app.use(`/api`, require(`./routes/`).routes);
 
-app.get("/*", function(_req, res) {
+app.get("*.js", function(req, res, next) {
+  req.url = req.url + ".gz";
+  res.set("Content-Encoding", "gzip");
+  res.set("Content-Type", "text/javascript");
+  next();
+});
+
+app.get("*.css", function(req, res, next) {
+  req.url = req.url + ".gz";
+  res.set("Content-Encoding", "gzip");
+  res.set("Content-Type", "text/css");
+  next();
+});
+
+app.use(express.static("build/data/img"));
+app.use(express.static("build/data/pdf"));
+app.use(express.static("build/data/site"));
+
+app.get("*", function(_req, res) {
   res.sendFile("data/site/index.html", { root: __dirname });
 });
 
