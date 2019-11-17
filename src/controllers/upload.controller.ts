@@ -39,16 +39,28 @@ export async function upload(req, res) {
 }
 
 export async function uploadMultiple(req, res) {
-  for (let i = 0; i < req.files.length; i++) {
-    const image = req.body.text[i];
+  if (req.files.length === 1) {
+    const image = req.body.text;
 
     sharp.concurrency(1);
     sharp.cache(false);
 
-    await sharp(req.files[i].path)
+    await sharp(req.files[0].path)
       .resize(parseInt(req.params.size))
       .toFile(path.resolve(__dirname, "../data/img", image));
-    fs.unlinkSync(req.files[i].path);
+    fs.unlinkSync(req.files[0].path);
+  } else {
+    for (let i = 0; i < req.files.length; i++) {
+      const image = req.body.text[i];
+
+      sharp.concurrency(1);
+      sharp.cache(false);
+
+      await sharp(req.files[i].path)
+        .resize(parseInt(req.params.size))
+        .toFile(path.resolve(__dirname, "../data/img", image));
+      fs.unlinkSync(req.files[i].path);
+    }
   }
 
   return res.sendStatus(200);
